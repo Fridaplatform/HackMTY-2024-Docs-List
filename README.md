@@ -17,6 +17,47 @@ El reto para los equipos interesados consiste en encontrar un caso de uso para l
 
 Se otorgarán puntos adicionales por aprovechar características recientes como Paged Attention, Dynamic Split Fuse o Continuous Batching.
 
+## APIs
+
+<p align="center">
+  <img src='public/prehack.png' alt='tecnologias' width='' height='320'>
+</p>
+
+### URLs
+
+- Base URL
+
+  <https://fridaplatform.com>
+
+- Basic inference (Postman):​
+
+  <https://fridaplatform.com/generate​>
+
+​
+
+- Usage with SDK OpenAI:​
+
+  <https://fridaplatform.com/v1>
+
+### Ejemplo
+
+```python
+from openai import OpenAI
+client = OpenAI(
+    api_key="-",
+    base_url="https://fridaplatform.com/v1"
+)
+response = client.chat.completions.create(
+  model="tgi",
+    messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Who won the world series in 2020?"},
+    {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+    {"role": "user", "content": "Where was it played?"}
+  ],stream=False
+)
+```
+
 ## Tecnologías que pueden ser de valor
 
 <p align="center">
